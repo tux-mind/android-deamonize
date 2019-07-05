@@ -1,0 +1,12 @@
+language: android
+android:
+  components:
+    - tools
+    - platform-tools
+install:
+  - echo y | sdkmanager "ndk-bundle"
+before_script:
+  - export ANDROID_NDK_HOME=$ANDROID_HOME/ndk-bundle
+  - export PATH=$PATH:$ANDROID_NDK_HOME
+script:
+  - ./build.sh
